@@ -1,0 +1,83 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" preserve-order="true">
+<parameter name="username" value="ghzdhcsxxadmin"></parameter>
+<parameter name="password" value="102684s"></parameter>
+<test name="NewTest1" >
+  <classes>
+	   <class name="com.selenium.testCase.AddAttendanceGroupTest">
+	  <methods>
+	  <include name="addBanci"></include>
+	  </methods>
+	  </class>
+  </classes>
+</test>
+  <!--
+  <test name="Test" >
+    <classes>
+      <class name="com.weixt.WeihdTestdcwj">
+	  <methods>
+	  <include name="add"></include>
+	  <include name="enter"></include>
+	  <include name="editChice"></include>
+	  <include name="deleteItem"></include>
+	  <include name="copyItem"></include>
+	  <include name="dcwjDelete"></include>
+	  </methods>
+	  </class>
+    </classes>
+  </test>
+  <test name="Test1" >
+    <classes>
+      <class name="com.weixt.JwTest_xke">
+      <methods>
+      <include name="jwNew"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> 
+  <test name="Test2" >
+    <classes>
+      <class name="com.weixt.JwTest_kech">
+      <methods>
+      <include name="class_New"></include>
+      <include name="class_update"></include>
+      <include name="class_Delete"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> 
+ 
+  <test name="Test3">
+  <classes>
+     <class name="com.weixt.Vote">
+    <methods>
+   <include name="addWork"></include>
+   </methods>
+   </class>
+   </classes>
+  </test>
+   <test name="Test4"> 
+   <classes>
+   <class name="com.kqaf.TeacherAttendanceRecordTest">
+    <methods>
+   <include name="gotoTeacherAttendanceRecordPage"></include>
+   <include name="gotoAttendanceDetailPage"></include>
+   <include name="AttendanceDetailBackTracking"></include>
+   <exclude name="VerifyBackTrackingBySql"></exclude>
+   </methods>
+   </class>
+   </classes>
+  </test>
+
+	 <test name="Test3">
+  <classes>
+     <class name="com.weixt.wristband.Pc_manageTestcase">
+    <methods>
+   <include name="gomanagePage"></include>
+   </methods>
+   </class>
+   </classes>
+   
+  </test>
+	-->
+</suite> <!-- Suite -->

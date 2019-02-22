@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test name="NewTest1(failed)">
+    <classes>
+      <class name="com.selenium.testCase.AddAttendanceGroupTest">
+        <methods>
+          <include name="addBanci"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.selenium.testCase.AddAttendanceGroupTest -->
+    </classes>
+  </test> <!-- NewTest1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
