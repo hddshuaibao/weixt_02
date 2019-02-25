@@ -1,6 +1,7 @@
 package com.selenium.base;
 
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -71,10 +72,15 @@ public class DriverBase{
 	 * */
 	public void switchToModal() {
 		driver.switchTo().activeElement();
+	
 	}
 	
-	
-	
+	/**
+	 * 获取当前窗口url
+	 * */
+	public String getCurrentUrl() {
+		return driver.getCurrentUrl();
+	}
 	
 	
 }

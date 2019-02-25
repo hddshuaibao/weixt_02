@@ -1,7 +1,9 @@
 package com.selenium.page;
 
 import java.util.List;
+import java.util.Random;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import com.selenium.base.DriverBase;
@@ -177,11 +179,77 @@ public class AttendanceGroupPage extends BasePage{
 		driver.switchToModal();
 	}
 	
+	/**
+	 * 获取考勤组定位设置开关
+	 * */
+	public WebElement switchButtonEle() {
+		return this.element(this.element(getByLocator.getLocator("modalTop")), getByLocator.getLocator("switchButton"));
+	}
+	/**
+	 * 获取考勤组定位设置开关switch_container
+	 * */
+	public WebElement switchContainerEle() {
+		return this.element(this.element(getByLocator.getLocator("modalTop")), getByLocator.getLocator("switchContainer"));
+	}
+	/**
+	 * 获取打卡位置打卡范围elelist
+	 * */
+	public List<WebElement> clockInfoEle(){
+		List<WebElement> clockinfo = this.elementList(this.element(getByLocator.getLocator("modalTop")), getByLocator.getLocator("clockInput"));
+		return clockinfo;
+	}
+	/**
+	 * 获取坐标地址ele
+	 * */
+	public WebElement addressEle() {
+		return element(element(getByLocator.getLocator("modalTop")),getByLocator.getLocator("address"));
+	}
+	/**
+	 * 点击考勤组定位设置开关
+	 * */
+	public void clickSwitch() {
+		click(switchButtonEle());
+	}
+	/**
+	 * 返回考勤组定位设置开关style
+	 * */
+	public String getSwitchStyle() {
+		return switchContainerEle().getAttribute("Style");
+	}
+	/**
+	 * 点击坐标地址链接
+	 * */
+	public void clickAddress() {
+		click(addressEle());
+	}
+	/**
+	 * 验证坐标地址链接，按钮置灰不可点
+	 * */
+	public String  ifToAmap() {
+		String url = driver.getCurrentUrl();
+		return url;
+	}
 	
 	
-	
-	
-	
-	
+	/**
+	 * 输入打卡位置范围
+	 * */
+	public void sendkeysClockInfo(String position,String range) {
+		int random = (int)Math.random()*1100+100;
+		range = String.valueOf(random);
+		this.sendKeys(clockInfoEle().get(0), position);
+		this.sendKeys(clockInfoEle().get(1), range);
+	}
+	/**
+	 * 验证打卡位置范围输入框是否disabled
+	 * */
+	public boolean ifDisabled() {
+		//System.out.println(clockInfoEle().get(0).getAttribute("disabled"));
+		if(clockInfoEle().get(0).getAttribute("disabled").equals("true")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 }
