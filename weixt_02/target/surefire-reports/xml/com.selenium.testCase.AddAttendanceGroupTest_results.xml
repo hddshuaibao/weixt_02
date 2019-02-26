@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="15.161">
+           time="11.368">
   <properties />
   
   
-            <testcase name="addBanci" time="15.161" classname="com.selenium.testCase.AddAttendanceGroupTest" />
+            <testcase name="addBanci" time="11.368" classname="com.selenium.testCase.AddAttendanceGroupTest" />
       
 </testsuite>

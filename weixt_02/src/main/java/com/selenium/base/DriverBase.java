@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -80,6 +81,20 @@ public class DriverBase{
 	 * */
 	public String getCurrentUrl() {
 		return driver.getCurrentUrl();
+	}
+	
+	/**
+	 * 获取cookie值
+	 * */
+	public void setCookie(Cookie cookie) {
+		driver.manage().addCookie(cookie);
+	}
+	public void delAllCookies() {
+		driver.manage().deleteAllCookies();
+	}
+	public Set<Cookie> getCookies(){
+		Set<Cookie> cookies = driver.manage().getCookies();
+		return cookies;
 	}
 	
 	

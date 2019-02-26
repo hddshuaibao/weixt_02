@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="password" value="102684s"/>
+  <parameter name="username" value="ghzdhcsxxadmin"/>
   <test name="NewTest1(failed)">
     <classes>
+      <class name="com.selenium.testCase.LoginTest">
+        <methods>
+          <include name="AfterTest"/>
+          <include name="BeforeClass"/>
+        </methods>
+      </class> <!-- com.selenium.testCase.LoginTest -->
       <class name="com.selenium.testCase.AddAttendanceGroupTest">
         <methods>
+          <include name="BeforeClass"/>
           <include name="addBanci"/>
-          <include name="login"/>
+          <include name="afterClass"/>
         </methods>
       </class> <!-- com.selenium.testCase.AddAttendanceGroupTest -->
     </classes>

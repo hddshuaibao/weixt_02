@@ -1,17 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite" preserve-order="true">
+<suite name="Suite" parallel="none">
 <parameter name="username" value="ghzdhcsxxadmin"></parameter>
 <parameter name="password" value="102684s"></parameter>
 <test name="NewTest1" >
   <classes>
-	   <class name="com.selenium.testCase.AddAttendanceGroupTest">
-	  <methods>
-	  <include name="addBanci"></include>
-	  </methods>
-	  </class>
+	   <class name="com.selenium.testCase.LoginTest"></class>
+	   <class name="com.selenium.testCase.AddAttendanceGroupTest"></class>
   </classes>
 </test>
   <!--
+  
   <test name="Test" >
     <classes>
       <class name="com.weixt.WeihdTestdcwj">
