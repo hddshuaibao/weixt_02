@@ -19,7 +19,7 @@ public class Test {
 		lp.sendkeysUser(pro.getPro("username"));
 		lp.sendkeysPassword(pro.getPro("password"));
 		lp.clickLoginBtn();
-		lp.goApplication(pro.getPro("appname"));
+		lp.goApplication(pro.getPro("kqaf"));
 		agp.buttonClick("设置扫码签到/考勤提醒");
 		try {
 			Thread.sleep(2000);
@@ -28,7 +28,7 @@ public class Test {
 			e.printStackTrace();
 		}
 	
-		agcp.switchBtn();
+		agcp.switchBtnDown();
 		
 		//System.out.println(getByLocator.getLocator("password"));
 		//System.out.println(lp.getuserEle());

@@ -5,10 +5,14 @@
 <test name="NewTest1" >
   <classes>
 	   <class name="com.selenium.testCase.LoginTest"></class>
-	   <class name="com.selenium.testCase.AddAttendanceGroupTest"></class>
+	   <class name="com.selenium.testCase.AttendanceGClockTest"></class>
+	   <class name="com.selenium.testCase.AttendanceGAddBciTest"></class>
   </classes>
 </test>
   <!--
+  不用的testcase放这里
+  <class name="com.selenium.testCase.LoginTest"></class>
+  
   
   <test name="Test" >
     <classes>

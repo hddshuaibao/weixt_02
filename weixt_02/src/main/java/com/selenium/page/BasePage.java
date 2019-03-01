@@ -61,6 +61,7 @@ public class BasePage {
 	 * */
 	public void sendKeys(WebElement element,String value) {
 		if(element != null) {
+			element.clear();
 			element.sendKeys(value);
 		}else {
 			System.out.println(element+"元素为空");

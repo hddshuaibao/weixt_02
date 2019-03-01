@@ -30,7 +30,7 @@ public class DriverBase{
 	 * 关闭浏览器
 	 * */
 	public void stop() {
-		driver.close();
+		driver.quit();
 		System.out.println("关闭浏览器");
 		
 	}
@@ -96,6 +96,16 @@ public class DriverBase{
 		Set<Cookie> cookies = driver.manage().getCookies();
 		return cookies;
 	}
-	
-	
+	/**
+	 * 切换窗口
+	 * */
+	public void switchWind(String wname) {
+		driver.switchTo().window(wname);
+	}
+	/**
+	 * 获取窗口句柄
+	 * */
+	public Set<String> getWindHand() {
+		return driver.getWindowHandles();
+	}
 }

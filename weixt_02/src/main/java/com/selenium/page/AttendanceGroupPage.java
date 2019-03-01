@@ -3,7 +3,6 @@ package com.selenium.page;
 import java.util.List;
 import java.util.Random;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import com.selenium.base.DriverBase;
@@ -11,6 +10,7 @@ import com.selenium.util.getByLocator;
 
 public class AttendanceGroupPage extends BasePage{
 
+	Random rand = new Random();
 	public AttendanceGroupPage(DriverBase driver) {
 		super(driver);
 		
@@ -29,7 +29,6 @@ public class AttendanceGroupPage extends BasePage{
 	 * */
 	public void buttonClick(String buttonName) {
 			for(int i = 0;i<this.getButtonEle().size();i++) {
-				System.out.println("点击"+this.getButtonEle().get(i).getText());
 				if(this.getButtonEle().get(i).getText().equals(buttonName)) {
 					this.getButtonEle().get(i).click();
 					break;
@@ -48,7 +47,6 @@ public class AttendanceGroupPage extends BasePage{
 	 * */
 	public void buttonClick2(String buttonName) {
 		for(int i = 0;i<this.getButtonEle2().size();i++) {
-			System.out.println("点击"+this.getButtonEle2().get(i).getText());
 			if(this.getButtonEle2().get(i).getText().equals(buttonName)) {
 				this.getButtonEle2().get(i).click();
 				break;
@@ -225,20 +223,20 @@ public class AttendanceGroupPage extends BasePage{
 	/**
 	 * 验证坐标地址链接，按钮置灰不可点
 	 * */
-	public String  ifToAmap() {
-		String url = driver.getCurrentUrl();
-		return url;
+	public int  ifToAmap() {
+		return driver.getWindHand().size();
 	}
 	
 	
 	/**
 	 * 输入打卡位置范围
 	 * */
-	public void sendkeysClockInfo(String position,String range) {
-		int random = (int)Math.random()*1100+100;
-		range = String.valueOf(random);
+	public String sendkeysClockInfo(String position) {
+		int random = rand.nextInt(1000)+1;
+		String range = String.valueOf(random);
 		this.sendKeys(clockInfoEle().get(0), position);
 		this.sendKeys(clockInfoEle().get(1), range);
+		return range;
 	}
 	/**
 	 * 验证打卡位置范围输入框是否disabled
@@ -251,5 +249,7 @@ public class AttendanceGroupPage extends BasePage{
 			return false;
 		}
 	}
+	
+	
 	
 }
