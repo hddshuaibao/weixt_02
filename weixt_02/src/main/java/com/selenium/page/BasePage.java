@@ -113,4 +113,16 @@ public class BasePage {
 		}
 	}
 	
+	/**
+	 * 找栏目
+	 * */
+	public void goLanmu(String lm) {
+		List<WebElement> leftColumn = this.elementList(getByLocator.getLocator("columnList"));
+		for(int i=0;i<leftColumn.size();i++) {
+			if(leftColumn.get(i).getText().contains(lm)) {
+				leftColumn.get(i).click();
+				break;
+			}
+		}
+	}
 }

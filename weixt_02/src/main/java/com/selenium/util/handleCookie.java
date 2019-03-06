@@ -15,11 +15,17 @@ public class handleCookie {
 		this.pro = new ProUtil("E:\\eclipseJEE\\workplace\\weixt_02\\cookie.properties");
 	}
 	
-	public void setCookie(String cookieName) {
+	public void setCookie190(String cookieName) {
 		String value = pro.getPro(cookieName);
-		Cookie cookie = new Cookie(cookieName, value);
+		Cookie cookie = new Cookie(cookieName, value,"10.10.10.190","/weixt", null);
 		driver.setCookie(cookie);
 	}
+	public void setCookie(String cookieName) {
+		String value = pro.getPro(cookieName);
+		Cookie cookie = new Cookie(cookieName, value,"www.weixiaotong.com.cn","/", null);
+		driver.setCookie(cookie);
+	}
+	
 	public void writeCookie() {
 		Set<Cookie> cookies = driver.getCookies();
 		for(Cookie cookie:cookies) {
