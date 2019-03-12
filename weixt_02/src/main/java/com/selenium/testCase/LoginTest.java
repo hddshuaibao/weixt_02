@@ -28,15 +28,17 @@ public class LoginTest extends CaseBase{
 	@Test
 	public void login() {
 		logger.debug("用log4j打印日志 ~~~~~进行登录");
-		driver.getUrl("https://www.weixiaotong.com.cn/weixt/login");
-		logpro.login("ghzdhcsxxadmin", "102684s");
+		//driver.getUrl("https://www.weixiaotong.com.cn/weixt/login");
+		//logpro.login("ghzdhcsxxadmin", "102684s");
+		driver.getUrl("http://10.10.10.190:8090/weixt/login");
+		logpro.login("dddddddd", "zaq1234");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		logpro.assertEquals("光海自动化测试学校管理员");
+		//logpro.assertEquals("光海自动化测试学校管理员");
 		logger.info("登录成功");
 		try {
 			Thread.sleep(2000);

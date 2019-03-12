@@ -5,7 +5,7 @@
 <test name="NewTest1" >
   <classes>
 	
-	<class name="com.selenium.testCase.DormitoryAddBuildTest"></class>
+	<class name="com.selenium.testCase.CardTest"></class>
 	  
   </classes>
 </test>

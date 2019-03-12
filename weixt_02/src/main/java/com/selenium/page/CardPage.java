@@ -4,6 +4,7 @@ import com.selenium.base.DriverBase;
 import com.selenium.testCase.LoginTest;
 import com.selenium.util.getByLocator;
 
+import java.io.File;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -24,6 +25,18 @@ public class CardPage extends BasePage {
 	public List<WebElement> bjEle(){
 		return this.elementList(getByLocator.getLocator("bjlist"));
 	}
+	/**
+	 * 获取班级选择框ele
+	 * */
+	public WebElement bjselectEle(){
+		return this.element(getByLocator.getLocator("bjselect"));
+	}
+	/**
+	 * 点击选择框
+	 * */
+	public void clickselect() {
+		this.click(this.bjselectEle());
+	}
 	
 	/**
 	 * 点击选择班级
@@ -33,9 +46,9 @@ public class CardPage extends BasePage {
 		for(WebElement bj:bjlist) {
 			if(bj.getText().equals(bjname)) {
 				this.click(bj);
-			}else {
-				logger.info("没有找到班级");
+				break;
 			}
+			//logger.info("没有找到班级");
 		}
 	}
 	
@@ -43,7 +56,7 @@ public class CardPage extends BasePage {
 	 * 获取radioele
 	 * */
 	public WebElement radioele(){
-		return this.element(getByLocator.getLocator("radioid"));
+		return this.element(getByLocator.getLocator("radio"));
 	}
 	/**
 	 * 点击radio
@@ -91,6 +104,57 @@ public class CardPage extends BasePage {
 		this.click(this.newCardEle());
 	}
 	
+	/**
+	 * 获取新增卡号ele
+	 * */
+	public WebElement cardlistEle() {
+		return this.element(getByLocator.getLocator("cardtext"));
+	}
+	/**
+	 * 获取新增卡号
+	 * */
+	public String addedCardNo() {
+		return cardlistEle().getText();
+	}
+	/**
+	 * 获取导出按钮ele
+	 * */
+	public WebElement exportBtnEle() {
+		return this.element(getByLocator.getLocator("exportbtn"));
+	}
+	/**
+	 * 点击导出按钮
+	 * */
+	public void clickexport() {
+		this.click(this.exportBtnEle());
+	}
+	/**
+	 * 返回导出前后文档中文件数
+	 * */
+	public int fileNumber(String filepath) {
+		File dir = new File(filepath);
+		File[] dir_contents = dir.listFiles();
+		return dir_contents.length;
+	}
+	/**
+	 * 获取删除卡号ele
+	 * */
+	public WebElement delcardEle() {
+		return this.element(getByLocator.getLocator("delcard"));
+	}
 	
+	/**
+	 * 点击删除按钮
+	 * */
+	public void clickdel() {
+		this.click(this.delcardEle());
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.alertOk();
+	}
 	
 }

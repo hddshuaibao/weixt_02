@@ -17,12 +17,12 @@ public class handleCookie {
 	
 	public void setCookie190(String cookieName) {
 		String value = pro.getPro(cookieName);
-		Cookie cookie = new Cookie(cookieName, value,"10.10.10.190","/weixt", null);
+		Cookie cookie = new Cookie(cookieName, value);
 		driver.setCookie(cookie);
 	}
 	public void setCookie(String cookieName) {
 		String value = pro.getPro(cookieName);
-		Cookie cookie = new Cookie(cookieName, value,"www.weixiaotong.com.cn","/", null);
+		Cookie cookie = new Cookie(cookieName, value);
 		driver.setCookie(cookie);
 	}
 	

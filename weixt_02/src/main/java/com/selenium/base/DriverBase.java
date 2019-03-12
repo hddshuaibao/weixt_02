@@ -34,7 +34,18 @@ public class DriverBase{
 		System.out.println("关闭浏览器");
 		
 	}
-	
+	/**
+	 * 确认alert
+	 * */
+	public void alertOk() {
+		driver.switchTo().alert().accept();
+	}
+	/**
+	 * 取消alert
+	 * */
+	public void alertNo() {
+		driver.switchTo().alert().dismiss();
+	}
 	
 	/**
 	 * 定位元素封装
@@ -108,4 +119,11 @@ public class DriverBase{
 	public Set<String> getWindHand() {
 		return driver.getWindowHandles();
 	}
+	/**
+	 * 刷新
+	 * */
+	public void fresh() {
+		driver.navigate().refresh();
+	}
+	
 }
